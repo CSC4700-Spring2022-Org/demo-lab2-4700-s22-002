@@ -26,5 +26,24 @@ public class CurrencyConverterTest {
         BigDecimal actualResult = converter.convert(originalAmount, rate);
         assertEquals(expectedResult, actualResult);
     }
+    
+    @Test
+    public void testIsValidWhenInAllowedRange() {
+        CurrencyConverter converter = new CurrencyConverter();
+        BigDecimal rate = BigDecimal.valueOf(0.055);
+        assertTrue(converter.isValid(rate));
+    }
+    
+    @Test
+    public void testIsValidWhenRateIsNull() {
+        CurrencyConverter converter = new CurrencyConverter();
+        assertFalse(converter.isValid(null));
+    }
 
 }
+
+
+
+
+
+

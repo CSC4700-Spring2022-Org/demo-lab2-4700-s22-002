@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.function.BooleanSupplier;
 
 public class CurrencyConverter {
 
@@ -13,6 +14,11 @@ public class CurrencyConverter {
     public BigDecimal convert(BigDecimal originalAmount, BigDecimal rate) {
         BigDecimal result = originalAmount.multiply(rate).setScale(2, RoundingMode.HALF_UP);
         return result;
+    }
+
+    public boolean isValid(BigDecimal rate) {
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }
